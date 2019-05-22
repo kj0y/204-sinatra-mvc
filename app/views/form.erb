@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-2">
+        <p>This application was developed by <a href="https://www.kandisflick.com" target="_blank">Kandis Flick</a></p>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <form class="col-md-3" action="/" method="post">
+        <div class="form-group">
+            <label for="birthdate">Enter your birthdate</label>
+            <input class="form-control" name="birthdate" type="date" />
+        </div>
+
+        <p><%= @error %>
+
+        <input class="btn btn-info" type="submit" />
+
+    </form>
+</div>
