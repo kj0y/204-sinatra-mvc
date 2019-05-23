@@ -1,4 +1,12 @@
-require 'sinatra'
+get '/:birthdate' do
+  setup_index_view()
+end
+
+get '/message/:birthday_number' do
+    birthday_number = params[:birthday_number].to_i
+    @message = "Your numerology number is #{birthday_number}. " + Person.get_message(birthday_number)
+    erb :index
+end
 
 #Ask the user for their birthdate and store in a variable
 def get_birthday
@@ -6,26 +14,8 @@ def get_birthday
     birthdate = gets
 end
 
-
- def setup_index_view
-   birthdate = params[:birthdate]
-   birthday_number = Person.calc_birthpath_num(birthdate)
-   @message = "Your numerology number is #{birthday_number}. " + Person.get_message(birthday_number)
-   erb :index
- end
-
-get '/form' do
-  erb :form
-end
-
 get '/' do
   erb :form
-end
-
-get '/message/:birthday_number' do
-    birthday_number = params[:birthday_number].to_i
-    @message = "Your numerology number is #{birthday_number}. " + Person.get_message(birthday_number)
-    erb :index
 end
 
 post '/' do
@@ -40,9 +30,20 @@ post '/' do
   end
 end
 
-get '/:birthdate' do
-  setup_index_view()
-end
+ def setup_index_view
+   birthdate = params[:birthdate]
+   birthday_number = Person.calc_birthpath_num(birthdate)
+   @message = "Your numerology number is #{birthday_number}. " + Person.get_message(birthday_number)
+   erb :index
+ end
+
+
+
+
+
+
+
+
 
 
 
