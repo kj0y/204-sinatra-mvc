@@ -5,7 +5,7 @@ describe "Our Person Show Route" do
   
   before (:all) do
     @person = Person.create(first_name: "Miss", last_name: "Piggy", birthdate: DateTime.now.utc - 40.years )
-    @birth_path_num = Person.get_birth_path_num(@person.birthdate.strftime("%m%d%Y"))
+    @birthday_number = Person.calc_birthpath_num(@person.birthdate.strftime("%m%d%Y"))
   end
 
   after (:all) do
@@ -19,7 +19,7 @@ describe "Our Person Show Route" do
   
   it "displays the numerology result on /people/:id page" do
     get("/people/#{@person.id}")
-    message = SpecHelper::NUMEROLOGY["#{@birth_path_num}"][:message]
+    message = SpecHelper::NUMEROLOGY["#{@birthday_number}"][:message]
     expect(last_response.body.include?(message)).to be(true)
   end  
 end
