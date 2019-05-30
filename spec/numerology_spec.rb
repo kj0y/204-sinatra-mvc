@@ -19,7 +19,7 @@ describe 'Our Numerology App' do
     expect(last_response.body).to include("<p>Your numerology number is")
   end    
 
-  it 'responds to a get request to message/:birth_path_num' do
+  it 'responds to a get request to message/:birthday_number' do
     get '/message/7'
     expect(last_response).to be_ok
   end
