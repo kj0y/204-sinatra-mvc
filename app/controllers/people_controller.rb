@@ -4,6 +4,11 @@ get '/people' do
   erb :"/people/index"
 end
 
+get '/people/:id/edit' do
+  @person = Person.find(params[:id])
+  erb :'/people/edit'
+end
+
 get '/people/new' do
   @person = Person.new
   erb :"/people/new"
@@ -23,6 +28,10 @@ end
 get '/people/:id/edit' do
   @person = Person.find(params[:id])
   erb :"/people/edit"
+end
+
+put '/people/:id/edit' do
+  redirect "/people"
 end
 
 put '/people/:id' do
