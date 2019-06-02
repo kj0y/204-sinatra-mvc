@@ -49,3 +49,9 @@ get '/people/:id' do
   @message = Person.get_message(birth_path_num)  
   erb :"/people/show"
 end
+
+delete '/people/:id' do
+  person = Person.find(params[:id])
+  person.destroy
+  redirect "/people"
+end

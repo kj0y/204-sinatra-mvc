@@ -2,7 +2,9 @@
 <table>
   <thead>
     <th>Name</th>
-    <th>Birthdate</th>   
+    <th>Birthdate</th>
+    <th>Edit</th>
+    <th>Delete</th>  
   </thead>
   <tbody>
     <% @people.each do |person| %>  
@@ -18,7 +20,13 @@
         <td>
           <a href="<%= "/people/#{person.id}/edit" %>"> Edit </a></td>
         </td>
+        <td>
+          <form action= "<%= "/people/#{person.id}" %>" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <input type="submit" value="Delete" />
+          </form>
+        </td>
       </tr>
-  <% end %>
+    <% end %>
   </tbody>
 </table>
