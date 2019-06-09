@@ -62,4 +62,3 @@ describe 'Our Numerology App' do
   end  
     
 end
-
