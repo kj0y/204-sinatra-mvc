@@ -25,6 +25,10 @@ post '/people' do
   redirect "/people/#{person.id}"
 end
 
+put '/people' do
+  "Hello World"
+end
+
 get '/people/:id/edit' do
   @person = Person.find(params[:id])
   erb :"/people/edit"
