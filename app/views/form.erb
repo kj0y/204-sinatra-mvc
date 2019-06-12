@@ -1,15 +1,41 @@
 <div class="row">
-    <div class="col-md-2">
-        <p>This application was developed by <a href="https://www.kandisflick.com" target="_blank">Kandis Flick</a></p>
-    </div>
-    <div class="col-md-1">
-    </div>
     <% if !@error.nil? %>
         <p><%= @error %></p>
     <% end %>
+
+    <div class="col-12">
+        <h2><%= @header %></h2>
+    </div>
+
     <form action="/" method="post">
-        <label for="birthdate">Enter your birthdate</label>
-        <input type="date" name="birthdate" />
-        <input type="submit" />
+
+        <div class="col-12"> 
+            <div class="input-field">   
+                <label for="first_name">First Name:</label> 
+                <input name="first_name" type="text" /> 
+            </div>
+
+            <div class="input-field">
+                <label for="last_name">Last Name:</label> 
+                <input name="last_name" type="text" /> 
+            </div>
+
+            <div class="input-field">
+                <label for="birthdate">Birthdate:</label> 
+                <input name="birthdate" type="date" /> 
+            </div>
+        </div>
+        <div class="col-12">
+            <input type="submit" />
+        </div>
+    </div>
+
+
     </form>
+
+
+</div>
+
+<div class="row">
+    <p><small>This application was developed by <a href="https://www.kandisflick.com" target="_blank">Kandis Flick</a></small></p>
 </div>

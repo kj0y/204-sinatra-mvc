@@ -1,4 +1,3 @@
-
 get '/people' do
   @people = Person.all
   erb :"/people/index"
@@ -23,10 +22,6 @@ post '/people' do
   
   person = Person.create(first_name: params[:first_name], last_name: params[:last_name], birthdate: birthdate)
   redirect "/people/#{person.id}"
-end
-
-put '/people' do
-  "Hello World"
 end
 
 get '/people/:id/edit' do

@@ -1,0 +1,15 @@
+.new-person {
+    background: #f7ece1;
+    color: #242038;
+    border: 2px dotted #cac4ce;
+    padding: 5%;
+}
+
+.input-field {
+    padding: 2%;
+    font-weight: 500;
+}
+
+.edit-person {
+    background: blue;
+}

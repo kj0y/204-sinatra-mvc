@@ -17,6 +17,7 @@ module ApplicationHelper
         @action
     end
 
+    # Retrieve person ID if it already exists, otherwise set it to new-person.
     def people_form_id(person)
         if person.new_record?
             @id = "new-person"
@@ -34,4 +35,5 @@ module ApplicationHelper
         end
         @class
     end
+
 end

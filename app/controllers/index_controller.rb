@@ -9,6 +9,7 @@ get '/message/:birth_path_num' do
 end
 
 get '/' do
+  @header = "Find your numerology number!"
   erb :form
 end
 
