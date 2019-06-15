@@ -18,12 +18,14 @@
           <%= "#{person.birthdate}" %>
         </td>
         <td>
-          <a href="<%= "/people/#{person.id}/edit" %>"> Edit </a></td>
+          <form action= "<%= "/people/#{person.id}/edit" %>">
+            <button type="submit" class="btn-primary">Edit</button>
+          </form>
         </td>
         <td>
           <form action= "<%= "/people/#{person.id}" %>" method="post">
             <input type="hidden" name="_method" value="delete" />
-            <input type="submit" value="Delete" />
+            <input type="submit" class="btn-danger" value="Delete" />
           </form>
         </td>
       </tr>
