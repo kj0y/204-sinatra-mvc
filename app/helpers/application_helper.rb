@@ -1,4 +1,13 @@
 module ApplicationHelper
+    def people_form_action(person)
+      if person.new_record?
+        @action = "/people"
+      else
+        @action = "/people/#{@person.id}"
+      end
+      @action
+    end
+    
     def people_form_method(person)
         if person.new_record?
             @method = "post"
@@ -8,15 +17,6 @@ module ApplicationHelper
         @method
     end
    
-    def people_form_action(person)
-        if person.new_record?
-            @action = "/people"
-        else
-            @action = "/people/#{@person.id}"
-        end
-        @action
-    end
-
     # Retrieve person ID if it already exists, otherwise set it to new-person.
     def people_form_id(person)
         if person.new_record?
